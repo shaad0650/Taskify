@@ -1,4 +1,3 @@
-/* General styles */
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -115,31 +114,76 @@ header input {
 
 /* Notes list styles */
 .notes-list {
-    display: flex;
     gap: 20px;
     padding-bottom: 20px;
     overflow-x: auto;
 }
 
+#noteHeading{
+    font-size: 35px;
+}
+
+.headImg{
+    display: flex;
+}
+
+#pluss{
+    height: 30px;
+    width: 30px;
+    padding-top: 42px;
+    padding-left: 270px;
+}
+
 .note-card {
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
+    padding: 10px;
+    border-radius: 15px;
+    width: 400px;
+    height: 150px;
     box-sizing: border-box;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 25px;
 }
+
 
 .note-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-}
-
-.note-card.highlight {
     background-color: #ffe599;
 }
+
+.userSpace{
+    display: flex;
+    gap: 30px;
+}
+
+#Dots{
+    height: 20px;
+    padding-top: 28px;
+    padding-left: 80px;
+}
+
+.threedots{
+    display: flex;
+}
+
+/* .idea{
+    width: 600px;
+} */
+
+/* .girlimg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#imagee{
+    height: 300px;
+} */
+/* .note-card.highlight {
+    background-color: #ffe599;
+} */
 
 /* Note detail styles */
 .note-detail {
@@ -149,6 +193,7 @@ header input {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 700px;
 }
 
 .note-detail h1 {
