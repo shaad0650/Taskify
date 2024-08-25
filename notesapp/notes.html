@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sidebar" id="sidebar">
+    <div class="logo">Awsmd</div>
+    <nav>
+        <ul>
+            <li>Templates</li>
+            <li>Import</li>
+            <li>Trash</li>
+            <li>Notes</li>
+            <li>Tasks</li>
+            <li>Announcements</li>
+            <li>Music</li>
+            <li>Questions</li>
+            <li>Dashboard</li>
+            <li>Development</li>
+            <li>Swift</li>
+        </ul>
+    </nav>
+    <div class="new-page">New Page</div>
+</div>
+
+<div class="main-content">
+    <header>
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <input type="text" placeholder="Search notes">
+        <div class="user-icons">
+            <!-- User icons placeholder -->
+            <div class="avatar"></div>
+            <div class="avatar"></div>
+            <div class="avatar"></div>
+        </div>
+    </header>
+
+    <section class="notes-list">
+        <div class="note-card">
+            <h2>Grocery list / Stores</h2>
+            <p>Bread Flour - Instant Dry Yeast - Extra-virgin Olive Oil...</p>
+        </div>
+        <div class="note-card">
+            <h2>Books to read</h2>
+            <p>Cheers to the books we've been meaning to read all these years...</p>
+        </div>
+        <div class="note-card highlight">
+            <h2>Write down your ideas</h2>
+            <p>Sometimes, on Mondays, when servers at A16 are announcing...</p>
+        </div>
+        <!-- More note cards -->
+    </section>
+
+    <section class="note-detail">
+        <h1>Write down your ideas</h1>
+        <p>"Sometimes, on Mondays, when servers at A16 are announcing the specials, you can almost feel the excitement at the table when the waiters say, 'And of course, since it’s Monday ... we have meatballs.'" says Shelley Lindgren.</p>
+        <div class="todo-list">
+            <ul>
+                <li>Setup meeting with Rachel</li>
+                <li>Apply at Braintree</li>
+                <li>Check to-dos</li>
+                <li>Check reservations</li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
