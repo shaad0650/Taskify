@@ -229,3 +229,34 @@ header input {
         display: block;
     }
 }
+
+/* .music{
+   
+} */
+
+.music {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: move; /* Change cursor to indicate it's movable */
+}
+
+#spotify-player {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.details{
+    height: 500px;
+}
