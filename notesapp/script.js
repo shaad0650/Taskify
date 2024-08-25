@@ -55,3 +55,51 @@ document.addEventListener('mousemove', (e) => {
         spotifyPlayer.style.transform = `translate(${initialX}px, ${initialY}px)`;
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const editableHeading = document.getElementById('editable-heading');
+    const editableContent = document.getElementById('editable-content');
+
+    function createEditField(text, callback) {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.value = text;
+        input.style.width = '100%';
+        input.style.boxSizing = 'border-box';
+
+        input.addEventListener('blur', () => {
+            callback(input.value);
+            document.body.removeChild(input);
+        });
+
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                callback(input.value);
+                document.body.removeChild(input);
+            }
+        });
+
+        return input;
+    }
+
+    editableHeading.addEventListener('click', () => {
+        const newInput = createEditField(editableHeading.textContent, (newValue) => {
+            editableHeading.textContent = newValue;
+        });
+        editableHeading.innerHTML = '';
+        editableHeading.appendChild(newInput);
+        newInput.focus();
+    });
+
+    editableContent.addEventListener('click', () => {
+        const newInput = createEditField(editableContent.textContent, (newValue) => {
+            editableContent.textContent = newValue;
+        });
+        editableContent.innerHTML = '';
+        editableContent.appendChild(newInput);
+        newInput.focus();
+    });
+});
+
+
