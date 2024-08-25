@@ -179,14 +179,37 @@ header input {
     gap: 30px;
 }
 
-#Dots{
-    height: 20px;
-    padding-top: 28px;
-    padding-left: 80px;
+.note-card {
+    position: relative; /* Make this container a positioning context */
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    padding-bottom: 50px;
+    border-radius: 15px;
+    width: 400px;
+    height: 150px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 25px;
 }
 
-.threedots{
+.notepad {
     display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensures that heading and icon are spaced out */
+    padding-right: 30px; /* Add some padding to the right to avoid overlap */
+}
+
+.threedots22 {
+    position: absolute;
+    top: 35px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    cursor: pointer;
+}
+
+.threedots-icon {
+    font-size: 20px;
 }
 
 /* .idea{
