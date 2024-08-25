@@ -20,7 +20,7 @@
             <li>Notes</li>
             <li>Tasks</li>
             <li>Announcements</li>
-            <li>Music</li>
+            <li id="music-link" onclick="toggleSpotify()">Music</li>
             <li>Questions</li>
             <li>Dashboard</li>
             <li>Development</li>
@@ -79,6 +79,11 @@
         </div>
     </div>
 </div>
+
+<!-- Embed Spotify Player -->
+<section id="spotify-player" style="display: none;">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4CIEPRBvYp2jhyjToMXbnJ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</section>
 
 <script src="script.js"></script>
 </body>
