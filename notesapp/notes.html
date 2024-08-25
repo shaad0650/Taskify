@@ -11,20 +11,14 @@
 
 <body>
 <div class="sidebar" id="sidebar">
-    <div class="logo">Awsmd</div>
+    <div class="logo">Taskify</div>
     <nav>
         <ul>
-            <li>Templates</li>
             <li>Import</li>
             <li>Trash</li>
             <li>Notes</li>
             <li>Tasks</li>
-            <li>Announcements</li>
             <li id="music-link" onclick="toggleSpotify()">Music</li>
-            <li>Questions</li>
-            <li>Dashboard</li>
-            <li>Development</li>
-            <li>Swift</li>
         </ul>
     </nav>
     <div class="new-page">New Page</div>
@@ -63,7 +57,7 @@
             <!-- More note cards will be added here -->
         </section>
     
-        <div>
+        <div id="details">
             <section class="note-detail">
                 <h1>Write down your ideas</h1>
                 <p>"Sometimes, on Mondays, when servers at A16 are announcing the specials, you can almost feel the excitement at the table when the waiters say, 'And of course, since it’s Monday ... we have meatballs.'" says Shelley Lindgren.</p>
@@ -81,9 +75,11 @@
 </div>
 
 <!-- Embed Spotify Player -->
-<section id="spotify-player" style="display: none;">
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4CIEPRBvYp2jhyjToMXbnJ?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</section>
+<div class="music">
+    <section id="spotify-player">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4CIEPRBvYp2jhyjToMXbnJ?utm_source=generator" width="100%" height="100px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </section>
+</div>
 
 <script src="script.js"></script>
 </body>
