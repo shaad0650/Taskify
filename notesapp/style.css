@@ -1,8 +1,14 @@
+
+:root{
+    --blue: #0c055a;
+    --orange: #f2490b;
+    --beige: #e6EED6;
+}
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    background-color: #f5f5f5;
+    background-color: var(--beige)
 }
 
 a {
@@ -12,13 +18,18 @@ a {
 /* Sidebar styles */
 .sidebar {
     width: 250px;
-    background-color: #ffffff;
-    border-right: 1px solid #e0e0e0;
+    background-color:var(--beige) ;
+    border-right: 1px solid #030027;
     height: 100vh;
     padding: 20px;
     box-sizing: border-box;
     position: fixed;
     transition: transform 0.3s ease;
+}
+
+.list:hover{
+    background-color: #f2f4ee;
+    color: #f2490b;
 }
 
 .sidebar.hidden {
@@ -29,6 +40,11 @@ a {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 30px;
+   
+}
+
+.list{
+    color: var(--blue);
 }
 
 nav ul {
@@ -115,7 +131,7 @@ header input {
 /* Notes list styles */
 .notes-list {
     gap: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
     overflow-x: auto;
 }
 
@@ -135,7 +151,7 @@ header input {
 }
 
 .note-card {
-    background-color: #ffffff;
+    background-color: #ffffff; /* Default background color */
     border: 1px solid #e0e0e0;
     padding: 10px;
     border-radius: 15px;
@@ -143,16 +159,20 @@ header input {
     height: 150px;
     box-sizing: border-box;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     margin-top: 25px;
+    color: var(--blue); /* Default text color */
 }
-
 
 .note-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1.05); /* Slight zoom effect */
+    background-color: var(--blue); /* Background color on hover */
+    color: var(--beige); /* Text color on hover */
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    background-color: #ffe599;
+    opacity: 0.7;
 }
+
+
 
 .userSpace{
     display: flex;
@@ -190,7 +210,8 @@ header input {
     flex: 1;
     background-color: #ffffff;
     border: 1px solid #e0e0e0;
-    padding: 20px;
+    padding: 10px;
+    margin-left: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 700px;
