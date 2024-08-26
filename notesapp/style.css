@@ -1,6 +1,6 @@
 
 :root{
-    --blue: #0c055a;
+    --blue: #09053b;
     --orange: #f2490b;
     --beige: #e6EED6;
 }
@@ -8,27 +8,31 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    background-color: var(--beige)
+    background-size: 100% 100%;
+    background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
+    background-size: 100% 100%;
+    background-color: var(--blue);
 }
 
-a {
-    text-decoration: none;
-}
 
 /* Sidebar styles */
 .sidebar {
     width: 250px;
-    background-color:var(--beige) ;
-    border-right: 1px solid #030027;
+    background-color:var(--blue) ;
+    border-right: 1px solid #e6EED6;
     height: 100vh;
     padding: 20px;
     box-sizing: border-box;
     position: fixed;
     transition: transform 0.3s ease;
+    color: var(--beige);
+}
+
+.list{
+    color: var(--beige);
 }
 
 .list:hover{
-    background-color: #f2f4ee;
     color: #f2490b;
 }
 
@@ -44,7 +48,7 @@ a {
 }
 
 .list{
-    color: var(--blue);
+    color: var(--beige);
 }
 
 nav ul {
@@ -67,12 +71,15 @@ nav ul li:hover {
 .new-page {
     margin-top: 20px;
     padding: 10px;
-    background-color: #f0f0f0;
+    background-color: var(--beige);
     border: 1px solid #e0e0e0;
     text-align: center;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    color: #09053b;
+    font-weight: bolder;
+    font-size: 18px;
 }
 
 .new-page:hover {
@@ -106,6 +113,11 @@ header {
     margin-right: 10px;
 }
 
+#searchh{
+    background-color: var(--beige);
+    width: 700px;
+}
+
 header input {
     flex: 1;
     max-width: 400px;
@@ -137,32 +149,34 @@ header input {
 
 #noteHeading{
     font-size: 35px;
+    color: var(--orange);
 }
 
 .headImg{
     display: flex;
+    
 }
 
 #pluss{
     height: 30px;
-    width: 30px;
-    padding-top: 42px;
-    padding-left: 270px;
+    padding-top: 44px;
+    padding-left: 275px;
 }
 
 .note-card {
-    background-color: #ffffff; /* Default background color */
-    border: 1px solid #e0e0e0;
-    padding: 10px;
-    border-radius: 15px;
-    width: 400px;
-    height: 150px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    margin-top: 25px;
-    color: var(--blue); /* Default text color */
-}
+
+        background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+        border: 1px solid #e0e0e0;
+        padding: 10px;
+        border-radius: 15px;
+        width: 400px;
+        height: 150px;
+        box-sizing: border-box;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        margin-top: 25px;
+        color: black; 
+}    
 
 .note-card:hover {
     transform: scale(1.05); /* Slight zoom effect */
@@ -177,11 +191,13 @@ header input {
 .userSpace{
     display: flex;
     gap: 30px;
+    height: 700px;
 }
 
 .note-card {
     position: relative; /* Make this container a positioning context */
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.7); /* White background with 50% opacity */
+
     border: 1px solid #e0e0e0;
     padding: 10px;
     padding-bottom: 50px;
@@ -198,7 +214,9 @@ header input {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Ensures that heading and icon are spaced out */
-    padding-right: 30px; /* Add some padding to the right to avoid overlap */
+    padding-right: 30px; 
+    background-color: rgba(255, 255, 255, 0); /* White background with 50% opacity */
+    /* Add some padding to the right to avoid overlap */
 }
 
 .threedots22 {
@@ -231,14 +249,17 @@ header input {
 /* Note detail styles */
 .note-detail {
     flex: 1;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.7);
     border: 1px solid #e0e0e0;
     padding: 10px;
     margin-left: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 700px;
+    height: 600px;
 }
+
+
 
 .note-detail h1 {
     font-size: 24px;
@@ -254,6 +275,7 @@ header input {
     padding: 10px 0;
     border-bottom: 1px solid #eee;
 }
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
