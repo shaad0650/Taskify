@@ -1,4 +1,3 @@
-
 :root{
     --blue: #09053b;
     --orange: #f2490b;
@@ -9,47 +8,40 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     background-size: 100% 100%;
-    background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
     background-size: 100% 100%;
     background-color: var(--blue);
 }
 
-
-
 /* Sidebar styles */
 .sidebar {
-    width: 250px;
-    background-color:var(--blue) ;
-    border-right: 1px solid #e6EED6;
+    width: 15.625rem; /* 250px */
+    background-color: var(--blue);
+    border-right: 0.0625rem solid var(--beige); /* 1px */
     height: 100vh;
-    padding: 20px;
+    padding: 1.25rem; /* 20px */
     box-sizing: border-box;
     position: fixed;
     transition: transform 0.3s ease;
     color: var(--beige);
 }
 
-.list{
+.list {
     color: var(--beige);
 }
 
-.list:hover{
-    color: #f2490b;
+.list:hover {
+    color: var(--orange);
 }
 
 .sidebar.hidden {
-    transform: translateX(-250px);
+    transform: translateX(-15.625rem); /* -250px */
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 1.5rem; /* 24px */
     font-weight: bold;
-    margin-bottom: 30px;
-   
-}
-
-.list{
-    color: var(--beige);
+    margin-bottom: 1.875rem; /* 30px */
 }
 
 nav ul {
@@ -59,7 +51,7 @@ nav ul {
 }
 
 nav ul li {
-    padding: 15px 0;
+    padding: 0.9375rem 0; /* 15px */
     color: #666;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -70,17 +62,17 @@ nav ul li:hover {
 }
 
 .new-page {
-    margin-top: 20px;
-    padding: 10px;
+    margin-top: 1.25rem; /* 20px */
+    padding: 0.625rem; /* 10px */
     background-color: var(--beige);
-    border: 1px solid #e0e0e0;
+    border: 0.0625rem solid #e0e0e0; /* 1px */
     text-align: center;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0.3125rem; /* 5px */
     transition: background-color 0.3s ease;
-    color: #09053b;
+    color: var(--blue);
     font-weight: bolder;
-    font-size: 18px;
+    font-size: 1.125rem; /* 18px */
 }
 
 .new-page:hover {
@@ -90,8 +82,8 @@ nav ul li:hover {
 /* Main content styles */
 .main-content {
     flex: 1;
-    padding: 20px;
-    margin-left: 250px;
+    padding: 1.25rem; /* 20px */
+    margin-left: 15.625rem; /* 250px */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -102,30 +94,30 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem; /* 20px */
 }
 
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 1.5rem; /* 24px */
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 0.625rem; /* 10px */
 }
 
-#searchh{
+#searchh {
     background-color: var(--beige);
-    width: 700px;
+    width: 43.75rem; /* 700px */
 }
 
 header input {
     flex: 1;
-    max-width: 400px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 20px;
+    max-width: 25rem; /* 400px */
+    padding: 0.625rem; /* 10px */
+    border: 0.0625rem solid #ddd; /* 1px */
+    border-radius: 0.3125rem; /* 5px */
+    margin-right: 1.25rem; /* 20px */
 }
 
 .user-icons {
@@ -134,136 +126,122 @@ header input {
 }
 
 .avatar {
-    width: 35px;
-    height: 35px;
+    width: 2.1875rem; /* 35px */
+    height: 2.1875rem; /* 35px */
     background-color: #ddd;
     border-radius: 50%;
-    margin-left: 5px;
+    margin-left: 0.3125rem; /* 5px */
 }
 
 /* Notes list styles */
 .notes-list {
-    gap: 20px;
-    padding: 20px;
+    gap: 1.25rem; /* 20px */
+    padding: 1.25rem; /* 20px */
     overflow-x: auto;
 }
 
-#noteHeading{
-    font-size: 35px;
+#noteHeading {
+    font-size: 2.1875rem; /* 35px */
     color: var(--orange);
 }
 
-.headImg{
+.headImg {
     display: flex;
-    
 }
 
-#pluss{
-    height: 30px;
-    padding-top: 44px;
-    padding-left: 275px;
+#pluss {
+    height: 1.875rem; /* 30px */
+    padding-top: 2.75rem; /* 44px */
+    padding-left: 17.1875rem; /* 275px */
 }
 
 .note-card {
-
-        background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
-        border: 1px solid #e0e0e0;
-        padding: 10px;
-        border-radius: 15px;
-        width: 400px;
-        height: 150px;
-        box-sizing: border-box;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-        margin-top: 25px;
-        color: black; 
-}    
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 0.0625rem solid #e0e0e0; /* 1px */
+    padding: 0.625rem; /* 10px */
+    border-radius: 0.9375rem; /* 15px */
+    width: 25rem; /* 400px */
+    height: 9.375rem; /* 150px */
+    box-sizing: border-box;
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* 0 4px 6px */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    margin-top: 1.5625rem; /* 25px */
+    color: black;
+}
 
 .note-card:hover {
-    transform: scale(1.05); /* Slight zoom effect */
-    background-color: var(--blue); /* Background color on hover */
-    color: var(--beige); /* Text color on hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+    background-color: var(--blue);
+    color: var(--beige);
+    box-shadow: 0 0.375rem 0.5rem rgba(0, 0, 0, 0.15); /* 0 6px 8px */
     opacity: 0.7;
 }
 
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 15.625rem; /* 250px */
+    background-color: #333;
+    color: #fff;
+    z-index: 1000;
+}
 
-
-.userSpace{
-    display: flex;
-    gap: 30px;
-    height: 700px;
+.main-content {
+    margin-left: 15.625rem; /* 250px */
+    padding: 1.25rem; /* 20px */
 }
 
 .note-card {
-    position: relative; /* Make this container a positioning context */
-    background-color: rgba(255, 255, 255, 0.7); /* White background with 50% opacity */
-
-    border: 1px solid #e0e0e0;
-    padding: 10px;
-    padding-bottom: 50px;
-    border-radius: 15px;
-    width: 400px;
-    height: 150px;
+    position: relative;
+    background-color: var(--beige);
+    border: 0.0625rem solid #e0e0e0; /* 1px */
+    padding: 0.625rem; /* 10px */
+    padding-bottom: 3.125rem; /* 50px */
+    border-radius: 0.9375rem; /* 15px */
+    width: 25rem; /* 400px */
+    height: 9.375rem; /* 150px */
     box-sizing: border-box;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* 0 4px 6px */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-top: 25px;
+    margin-top: 1.5625rem; /* 25px */
 }
 
 .notepad {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensures that heading and icon are spaced out */
-    padding-right: 30px; 
-    background-color: rgba(255, 255, 255, 0); /* White background with 50% opacity */
-    /* Add some padding to the right to avoid overlap */
+    justify-content: space-between;
+    padding-right: 1.875rem; /* 30px */
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .threedots22 {
     position: absolute;
-    top: 35px; /* Distance from the top */
-    right: 20px; /* Distance from the right */
+    top: 2.1875rem; /* 35px */
+    right: 1.25rem; /* 20px */
     cursor: pointer;
 }
 
 .threedots-icon {
-    font-size: 20px;
+    font-size: 1.25rem; /* 20px */
 }
-
-/* .idea{
-    width: 600px;
-} */
-
-/* .girlimg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#imagee{
-    height: 300px;
-} */
-/* .note-card.highlight {
-    background-color: #ffe599;
-} */
 
 /* Note detail styles */
 .note-detail {
     flex: 1;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 1px solid #e0e0e0;
-    padding: 10px;
-    margin-left: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 700px;
-    height: 600px;
+    background-color: var(--beige);
+    border: 0.0625rem solid #e0e0e0; /* 1px */
+    padding: 0.625rem; /* 10px */
+    margin-left: 2.5rem; /* 40px */
+    border-radius: 0.625rem; /* 10px */
+    box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* 0 4px 6px */
+    width: 43.75rem; /* 700px */
+    height: 37.5rem; /* 600px */
 }
 
-
-
 .note-detail h1 {
-    font-size: 24px;
+    font-size: 1.5rem; /* 24px */
     margin-top: 0;
 }
 
@@ -273,15 +251,14 @@ header input {
 }
 
 .todo-list ul li {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+    padding: 0.625rem 0; /* 10px */
+    border-bottom: 0.0625rem solid #eee; /* 1px */
 }
-
 
 /* Responsive styles */
 @media (max-width: 768px) {
     .sidebar {
-        transform: translateX(-250px);
+        transform: translateX(-15.625rem); /* -250px */
     }
 
     .sidebar.hidden {
@@ -297,10 +274,7 @@ header input {
     }
 }
 
-/* .music{
-   
-} */
-
+/* Music player styles */
 .music {
     position: fixed;
     bottom: 0;
@@ -310,20 +284,29 @@ header input {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: move; /* Change cursor to indicate it's movable */
+    cursor: move;
 }
 
 #spotify-player {
     width: 100%;
-    max-width: 600px;
+    max-width: 37.5rem; /* 600px */
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    border-radius: 12px;
+    padding: 0.625rem; /* 10px */
+    border-radius: 0.75rem; /* 12px */
 }
 
-.details{
-    height: 500px;
+.details {
+    height: 31.25rem; /* 500px */
+}
+
+#userspace {
+    display: flex;
+}
+
+#signout{
+    padding-top: 265px;
+    padding-left: 70px;
 }
