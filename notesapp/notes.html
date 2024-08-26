@@ -11,17 +11,18 @@
 
 <body>
 <div class="sidebar" id="sidebar">
-    <div class="logo">Taskify</div>
+    <div class="logo">MindVault</div>
     <nav>
         <ul>
-            <li class="list" id="voiceToTextBTN"><a href="#">Voice-to-Text</a></li>
+            <li class="list" id="voiceToTextBTN">Voice-to-Text</li>
             <li class="list">Trash</li>
             <li class="list">Notes</li>
-            Cannot GET /index.html
+            <li class="list" id="calendar">Calendar</li>
             <li class="list"id="music-link" onclick="toggleSpotify()">Music</li>
         </ul>
     </nav>
     <div class="new-page">New Page</div>
+    <p class="list" id="signout">Sign out</p>
 </div>
 
 <div class="main-content">
@@ -35,7 +36,7 @@
         </div>
     </header>
 
-    <div class="userSpace"> 
+    <div class="userSpace" id="userspace"> 
         <section class="notes-list">
             <div class="headImg">
                 <h1 id="noteHeading">Notes</h1>
