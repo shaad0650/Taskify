@@ -14,10 +14,10 @@
     <div class="logo">Taskify</div>
     <nav>
         <ul>
-            <li class="list">Voice-to-Text</li>
+            <li class="list" id="voiceToTextBTN"><a href="#">Voice-to-Text</a></li>
             <li class="list">Trash</li>
             <li class="list">Notes</li>
-            <li class="list">Tasks</li>
+            Cannot GET /index.html
             <li class="list"id="music-link" onclick="toggleSpotify()">Music</li>
         </ul>
     </nav>
@@ -62,19 +62,12 @@
         <div id="details">
             <section class="note-detail">
                 <h1>Write down your ideas</h1>
-                <p>"Sometimes, on Mondays, when servers at A16 are announcing the specials, you can almost feel the excitement at the table when the waiters say, 'And of course, since it’s Monday ... we have meatballs.'" says Shelley Lindgren.</p>
-                <div class="todo-list">
-                    <ul id="todo-list">
-                        <li>Setup meeting with Rachel</li>
-                        <li>Apply at Braintree</li>
-                        <li>Check to-dos</li>
-                        <li>Check reservations</li>
-                    </ul>
+                <p id="editable-paragraph">"Sometimes, on Mondays, when servers at A16 are announcing the specials, you can almost feel the excitement at the table when the waiters say, 'And of course, since it’s Monday ... we have meatballs.'" says Shelley Lindgren.</p>
+                <div id="task-list">
+                    <!-- Tasks will be dynamically added here -->
                 </div>
-                <div class="add-todo">
-                    <input type="text" id="todo-input" placeholder="Add a new task">
-                    <button id="add-todo-btn">Add Task</button>
-                </div>
+                <button id="add-task-button">Add Task</button>
+                <input type="text" id="new-task-input" placeholder="New task description" style="display:none;">
             </section>
         </div>
         
