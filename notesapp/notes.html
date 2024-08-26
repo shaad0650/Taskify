@@ -14,7 +14,7 @@
     <div class="logo">Taskify</div>
     <nav>
         <ul>
-            <li class="list">Import</li>
+            <li class="list">Voice-to-Text</li>
             <li class="list">Trash</li>
             <li class="list">Notes</li>
             <li class="list">Tasks</li>
@@ -27,7 +27,7 @@
 <div class="main-content">
     <header>
         <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
-        <input type="text" placeholder="Search notes">
+        <input type="text" placeholder="Search notes" id="searchh">
         <div class="user-icons">
             <div class="avatar"></div>
             <div class="avatar"></div>
@@ -35,13 +35,13 @@
         </div>
     </header>
 
-    <div class="userSpace">
+    <div class="userSpace"> 
         <section class="notes-list">
             <div class="headImg">
                 <h1 id="noteHeading">Notes</h1>
-                <img id="pluss" src="plus.png" alt="Add Note" style="cursor: pointer;">
+                <img id="pluss" src="plus (1).png">
             </div>
-            <div class="note-card highlight">
+            <div class="note-card">
                 <div class="notepad">
                     <h2 id="editable-heading">Write down your ideas</h2>
                     <div class="threedots22">
@@ -64,22 +64,27 @@
                 <h1>Write down your ideas</h1>
                 <p>"Sometimes, on Mondays, when servers at A16 are announcing the specials, you can almost feel the excitement at the table when the waiters say, 'And of course, since it’s Monday ... we have meatballs.'" says Shelley Lindgren.</p>
                 <div class="todo-list">
-                    <ul>
+                    <ul id="todo-list">
                         <li>Setup meeting with Rachel</li>
                         <li>Apply at Braintree</li>
                         <li>Check to-dos</li>
                         <li>Check reservations</li>
                     </ul>
                 </div>
+                <div class="add-todo">
+                    <input type="text" id="todo-input" placeholder="Add a new task">
+                    <button id="add-todo-btn">Add Task</button>
+                </div>
             </section>
         </div>
+        
     </div>
 </div>
 
 <!-- Embed Spotify Player -->
 <div class="music">
-    <section id="spotify-player">
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4CIEPRBvYp2jhyjToMXbnJ?utm_source=generator" width="100%" height="100px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <section id="spotify-player" style="display: none;">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/4CIEPRBvYp2jhyjToMXbnJ?utm_source=generator" width="100%" height="100px" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" ></iframe>
     </section>
 </div>
 
