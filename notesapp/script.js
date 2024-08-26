@@ -80,29 +80,67 @@ document.getElementById("pluss").addEventListener("click", function() {
     });
 });
 
-function editElement(element) {
-    const currentText = element.textContent;
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.value = currentText;
-    input.style.width = '100%';
-    input.style.boxSizing = 'border-box';
+document.addEventListener('DOMContentLoaded', () => {
+    const todoList = document.getElementById('todo-list');
+    const todoInput = document.getElementById('todo-input');
 
-    input.addEventListener('blur', function() {
-        element.textContent = input.value;
-        input.replaceWith(element);
-    });
+    // Function to add a new task
+    todoInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            const newTaskText = todoInput.value.trim();
+            if (newTaskText) {
+                const newTask = document.createElement('li');
+                newTask.textContent = newTaskText;
+                newTask.className = 'task-text';
 
-    input.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') {
-            element.textContent = input.value;
-            input.replaceWith(element);
+                // Add event listener to make task text editable on click
+                newTask.addEventListener('click', () => makeEditable(newTask));
+
+                todoList.appendChild(newTask);
+                todoInput.value = ''; // Clear the input field
+            }
         }
     });
 
-    element.replaceWith(input);
-    input.focus();
-}
+    // Function to make a task text editable
+    function makeEditable(task) {
+        const originalText = task.textContent;
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.value = originalText;
+        input.className = 'task-edit-input';
+
+        // Replace task text with input field
+        task.replaceWith(input);
+        input.focus();
+
+        // Save changes when input loses focus or user presses Enter
+        input.addEventListener('blur', () => saveChanges(input, task));
+        input.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                saveChanges(input, task);
+            }
+        });
+    }
+
+    // Function to save changes made to a task
+    function saveChanges(input, task) {
+        const newText = input.value.trim();
+        if (newText) {
+            task.textContent = newText;
+            input.replaceWith(task);
+        } else {
+            // Remove the task if the input is empty
+            input.remove();
+        }
+    }
+
+    // Make existing tasks editable on click
+    document.querySelectorAll('#todo-list li').forEach(task => {
+        task.addEventListener('click', () => makeEditable(task));
+    });
+});
+
 
 
 
@@ -210,51 +248,85 @@ function addTask() {
     }
 }
 
-// Function to make a task text editable
-function makeEditable(taskText) {
-    const originalText = taskText.textContent;
-    const input = document.createElement('input');
-    input.type = 'text';
-    input.value = originalText;
-    input.className = 'task-edit-input';
+// Function to make an element editable
+function makeEditable(element) {
+    element.contentEditable = "true";
+    element.style.border = "none"; // Ensure no border appears
+    element.style.outline = "none"; // Remove outline when focused
+    element.style.backgroundColor = "transparent"; // Transparent background
+    element.style.display = "inline"; // Maintain inline display
 
-    // Replace task text with input field
-    taskText.parentNode.replaceChild(input, taskText);
-    input.focus();
+    element.focus();
 
-    // Save changes when the input loses focus or user presses Enter
-    input.addEventListener('blur', () => saveChanges(input, taskText));
-    input.addEventListener('keypress', (event) => {
+    // Function to save changes
+    const saveChanges = () => {
+        const updatedContent = element.textContent.trim();
+        if (updatedContent !== '') {
+            console.log("Saved content:", updatedContent);
+            // Example: localStorage.setItem(element.id, updatedContent);
+        }
+        element.contentEditable = "false";
+    };
+
+    // Save changes when the input loses focus
+    element.addEventListener('blur', saveChanges);
+
+    // Save changes when the user presses Enter
+    element.addEventListener('keypress', (event) => {
         if (event.key === 'Enter') {
-            saveChanges(input, taskText);
+            saveChanges(); // Call saveChanges function
+            event.preventDefault(); // Prevent line break
         }
     });
 }
 
-// Function to save changes made to a task
-function saveChanges(input, taskText) {
-    const newText = input.value.trim();
+// Function to add a new task
+function addNewTask(taskDescription) {
+    // Create new task element
+    const newTask = document.createElement('div');
+    newTask.className = 'editable-task';
+    newTask.textContent = taskDescription;
 
-    if (newText) {
-        taskText.textContent = newText;
-        input.parentNode.replaceChild(taskText, input);
-    } else {
-        // If the new text is empty, just replace the input with the original text
-        taskText.textContent = input.value;
-        input.parentNode.replaceChild(taskText, input);
-    }
+    // Append new task to the task list
+    document.getElementById('task-list').appendChild(newTask);
+
+    // Make new task editable on click
+    newTask.addEventListener('click', function() {
+        makeEditable(this);
+    });
 }
 
-// Event listener for the 'Add Task' button
-document.getElementById('add-todo-btn').addEventListener('click', addTask);
-
-// Event listener for pressing 'Enter' key to add a new task
-document.getElementById('todo-input').addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
-        addTask();
-    }
+// Make the paragraph editable on click
+document.getElementById('editable-paragraph').addEventListener('click', function() {
+    makeEditable(this);
 });
 
+// Initialize existing tasks to be editable
+document.querySelectorAll('.editable-task').forEach(task => {
+    task.addEventListener('click', function() {
+        makeEditable(this);
+    });
+});
+
+// Handle adding new tasks
+document.getElementById('add-task-button').addEventListener('click', () => {
+    const taskInput = document.getElementById('new-task-input');
+    taskInput.style.display = 'block'; // Show input field
+    taskInput.focus(); // Focus input field
+
+    // Handle Enter key press to add task
+    taskInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            const taskDescription = taskInput.value.trim();
+            if (taskDescription) {
+                addNewTask(taskDescription);
+                taskInput.value = ''; // Clear input field
+                taskInput.style.display = 'none'; // Hide input field
+            }
+            event.preventDefault(); // Prevent line break
+        }
+    });
+});
 
 
 
