@@ -329,4 +329,137 @@ document.getElementById('add-task-button').addEventListener('click', () => {
 });
 
 
+// document.getElementById("voiceToTextBTN").addEventListener("click", function(event) {
+//     // Prevent the default action of the link
+//     event.preventDefault();
 
+//     // Open a new window
+//     window.open("./voiceToText/index.html", "_blank", "width=600,height=400");
+// });
+
+// document.getElementById("calendar").addEventListener("click", function(event) {
+//     // Prevent the default action of the link
+//     event.preventDefault();
+
+//     // Open a new window
+//     window.open("./calendar2/cal2.html", "_blank", "width=600,height=400");
+// });
+
+// document.getElementById("voiceToTextBTN").addEventListener("click", function(event) {
+//     // Prevent the default action of the link
+//     event.preventDefault();
+
+//     // Fetch the content of the voice-to-text page
+//     fetch('./voiceToText/index.html')
+//         .then(response => response.text())
+//         .then(data => {
+//             // Inject the fetched content into the userSpace div
+//             document.getElementById("userspace").innerHTML = data;
+//         })
+//         .catch(error => {
+//             console.error('Error fetching the voice-to-text page:', error);
+//         });
+// });
+
+// Variable to track the state of the calendar
+let isCalendarVisible = false;
+
+document.getElementById("calendar").addEventListener("click", function(event) {
+    // Prevent the default action of the link
+    event.preventDefault();
+
+    // Get the userSpace element
+    const userSpace = document.getElementById("userspace");
+
+    if (isCalendarVisible) {
+        // Hide the calendar
+        userSpace.innerHTML = ''; // Clear the content
+        isCalendarVisible = false; // Update state
+    } else {
+        // Show the calendar
+        fetch('./calendar2/cal2.html')
+            .then(response => response.text())
+            .then(html => {
+                // Inject the fetched HTML content into the userSpace div
+                userSpace.innerHTML = html;
+
+                // Optionally, dynamically load CSS and JS files
+                const link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = './calendar2/cal2.css';
+                document.head.appendChild(link);
+
+                const script = document.createElement('script');
+                script.src = './calendar2/cal2.js';
+                document.body.appendChild(script);
+            })
+            .catch(error => {
+                console.error('Error fetching the calendar page:', error);
+            });
+
+        isCalendarVisible = true; // Update state
+    }
+});
+
+
+let isVoiceVisible = false; // Tracks visibility of the voice-to-text interface
+let originalContent = ''; // Variable to store the original content
+
+document.getElementById("voiceToTextBTN").addEventListener("click", function(event) {
+    event.preventDefault();
+
+    const userSpace = document.getElementById("userspace");
+
+    if (isVoiceVisible) {
+        // Restore the original content (the notes section)
+        userSpace.innerHTML = originalContent;
+        isVoiceVisible = false; // Update state
+
+        // Clean up dynamically added resources
+        document.querySelectorAll('link[href*="voice.css"]').forEach(link => link.remove());
+        document.querySelectorAll('script[src*="languages.js"], script[src*="scriptt.js"]').forEach(script => script.remove());
+
+    } else {
+        // Store the original content if it hasn't been stored yet
+        if (!originalContent) {
+            originalContent = userSpace.innerHTML;
+        }
+
+        // Show a loading indicator
+        userSpace.innerHTML = '<p>Loading...</p>';
+
+        // Fetch the voice-to-text interface
+        fetch('./voiceToText/index.html')
+            .then(response => response.text())
+            .then(html => {
+                // Inject the fetched HTML content into the userSpace div
+                userSpace.innerHTML = html;
+
+                // Dynamically load CSS and JS files if not already added
+                if (!document.querySelector('link[href="./voiceToText/voice.css"]')) {
+                    const link = document.createElement('link');
+                    link.rel = 'stylesheet';
+                    link.href = './voiceToText/voice.css';
+                    document.head.appendChild(link);
+                }
+
+                if (!document.querySelector('script[src="./voiceToText/languages.js"]')) {
+                    const script1 = document.createElement('script');
+                    script1.src = './voiceToText/languages.js';
+                    document.body.appendChild(script1);
+                }
+
+                if (!document.querySelector('script[src="./voiceToText/scriptt.js"]')) {
+                    const script2 = document.createElement('script');
+                    script2.src = './voiceToText/scriptt.js';
+                    document.body.appendChild(script2);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching the voice-to-text page:', error);
+                userSpace.innerHTML = '<p>Error loading content. Please try again later.</p>';
+            });
+
+        isVoiceVisible = true; // Update state
+    }
+});
